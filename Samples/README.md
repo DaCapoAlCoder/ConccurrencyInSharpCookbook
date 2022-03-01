@@ -1,3 +1,6 @@
+### This is a subtree from the main git repository based on the GitLab samples from the book @ https://resources.oreilly.com/examples/0636920266624 
+### Use git-subtree commands to interact with the Samples section of this solution
+
 ## Example files for the title:  
 	  
 # Concurrency in C# Cookbook 2nd Edition, by Stephen Cleary
@@ -13,3 +16,4 @@ We appreciate, but do not require, attribution. An attribution usually includes 
 If you think your use of code examples falls outside fair use or the permission given here, feel free to contact us at <permissions@oreilly.com>.
 	  
 Please note that the examples are not production code and have not been carefully tested. They are provided "as-is" and come with no warranty of any kind.
+
