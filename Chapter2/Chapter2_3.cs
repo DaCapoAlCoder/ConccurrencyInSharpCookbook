@@ -30,10 +30,24 @@ namespace Chapter2
 
         async Task CallMyMethodAsync()
         {
-            // <T> should be a value type or an immutable type
-            //  - "The calling method is asynchronous and can complete before progress is reported"
-            //  - There appears to be a race condition between the async method completing and the reporting event (not sure)
-            //  - If there is a race condition then immutable report types will guarantee correct value is read at the event (still not sure)
+            // Progress<T> uses the current synchronization context if there is one available. This allows updates to be sent to a ui thread.
+            // The syncrhonization context of the ui will keep updates synrchronized. The synchronization context can keep the execution of
+            // the progress updates serialized. The synchronization context allows the continuation after an asynchronous method to return
+            // to the same thread.
+            // But if there is no current synchronization context a thread from the thread pool is used. 
+            // Executing fast updates that execute events handlers on the thread pool can cause the same event handlers to run on different threads at
+            // the same time. This can result in multiple threads updating the same piece of state data, causing a race condition which can
+            // corrupt data if two threads partially update the same piece of data.
+
+            // Because the update event can execute in the thread pool and the method doing the work and reporting progress can be asynchronous,
+            // the asynchronous method may complete before the thread pool has time to execute all of the updates. This is probably worst, where
+            // executing updates in a fast loop and the queue feeding the thread pool gets backed up. If the progress value is updated after
+            // the method doing the work completes i.e. setting to complete, it may cause race conditions with to be executed event handlers.
+
+            // The result of these effects is that the object reported by Progress.Report should be immutable. A new object should be created
+            // for each update, preventing race conditions.
+            
+            // Each progress update Posted to the synchronization context/thread pool is executed asynchronously 
             var progress = new Progress<double>();
             progress.ProgressChanged += (sender, args) =>
             {
