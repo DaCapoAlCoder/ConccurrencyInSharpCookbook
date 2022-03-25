@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Chapter2
@@ -11,8 +8,8 @@ namespace Chapter2
         public async Task Run()
         {
             await CallMyMethodAsync();
-
         }
+
         async Task MyMethodAsync(IProgress<double> progress = null)
         {
             bool done = false;
@@ -46,12 +43,12 @@ namespace Chapter2
 
             // The result of these effects is that the object reported by Progress.Report should be immutable. A new object should be created
             // for each update, preventing race conditions.
-            
+
             // Each progress update Posted to the synchronization context/thread pool is executed asynchronously 
             var progress = new Progress<double>();
             progress.ProgressChanged += (sender, args) =>
             {
-                Console.WriteLine($"Complete: {100*args}%");
+                Console.WriteLine($"Complete: {100 * args}%");
             };
             await MyMethodAsync(progress);
         }
