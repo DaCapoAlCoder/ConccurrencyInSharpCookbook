@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Chapter2
 {
-    public class Chapter2_1
+    public class Chapter2_1 : IChapter
     {
         public async Task Run()
         {

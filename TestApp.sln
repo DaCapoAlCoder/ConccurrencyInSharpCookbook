@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWpf", "TestWpf\TestWpf.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples", "Samples\Samples.csproj", "{D4BB482D-530B-44AF-9BB0-59C33CCFFFE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{AC6773EA-FB19-41C7-B996-1A5F17DFBAE4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D4BB482D-530B-44AF-9BB0-59C33CCFFFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4BB482D-530B-44AF-9BB0-59C33CCFFFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4BB482D-530B-44AF-9BB0-59C33CCFFFE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6773EA-FB19-41C7-B996-1A5F17DFBAE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6773EA-FB19-41C7-B996-1A5F17DFBAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6773EA-FB19-41C7-B996-1A5F17DFBAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6773EA-FB19-41C7-B996-1A5F17DFBAE4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

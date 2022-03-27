@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Chapter2
 {
-    public class Chapter2_5
+    public class Chapter2_5 : IChapter
     {
         public async Task Run()
         {

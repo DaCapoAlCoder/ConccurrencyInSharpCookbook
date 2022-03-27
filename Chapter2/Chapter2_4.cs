@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Chapter2
 {
-    public class Chapter2_4
+    public class Chapter2_4 : IChapter
     {
         public async Task Run()
         {
