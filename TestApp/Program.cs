@@ -22,8 +22,11 @@ namespace TestApp
             //Chapter2_5 chapter2_5 = new();
             //await chapter2_5.Run();
 
-            Chapter2_6 chapter2_6 = new();
-            await chapter2_6.Run();
+            //Chapter2_6 chapter2_6 = new();
+            //await chapter2_6.Run();
+
+            Chapter2_7 chapter2_7 = new();
+            await chapter2_7.Run();
         }
     }
 }
