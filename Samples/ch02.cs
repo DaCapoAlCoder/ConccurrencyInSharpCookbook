@@ -511,7 +511,7 @@ class ch02r10C
     if (_disposeLogic == null)
       return default;
 
-    // Note: this simple example is not threadsafe;
+    // Note: this simple example is not thread safe;
     //  if multiple threads call DisposeAsync,
     //  the logic could run more than once.
     Func<Task> logic = _disposeLogic;
