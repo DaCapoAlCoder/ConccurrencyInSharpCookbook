@@ -44,8 +44,17 @@ namespace TestApp
             #endregion
 
             #region Chapter3
-            Chapter3_01 chapter3 = new();
-            await chapter3.Run();
+            //Chapter3_01 chapter3_01 = new();
+            //await chapter3.Run();
+
+            //Chapter3_02 chapter3_02 = new();
+            //await chapter3_02.Run();
+
+            //Chapter3_03 chapter3_03 = new();
+            //await chapter3_03.Run();
+
+            Chapter3_04 chapter3_04 = new();
+            await chapter3_04.Run();
             #endregion
         }
     }
