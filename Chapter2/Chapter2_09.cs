@@ -10,7 +10,7 @@ using System.Windows.Input;
 
 namespace Chapter2
 {
-    public class Chapter2_09 : IChapter
+    public class Chapter2_09 : IChapterAsync
     {
         public async Task Run()
         {

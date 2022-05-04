@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Chapter2\Chapter2.csproj" />
     <ProjectReference Include="..\Chapter3\Chapter3.csproj" />
+    <ProjectReference Include="..\Chapter4\Chapter4.csproj" />
   </ItemGroup>
 
 </Project>

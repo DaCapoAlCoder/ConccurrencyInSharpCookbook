@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Chapter3
 {
-    public class Chapter3_04 : IChapter
+    public class Chapter3_04 : IChapterAsync
     {
         public async Task Run()
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Chapter2
 {
-    public class Chapter2_04 : IChapter
+    public class Chapter2_04 : IChapterAsync
     {
         public async Task Run()
         {
