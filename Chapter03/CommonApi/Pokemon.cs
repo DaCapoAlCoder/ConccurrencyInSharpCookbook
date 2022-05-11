@@ -1,4 +1,4 @@
-﻿namespace Chapter3.CommonApi
+﻿namespace Chapter03.CommonApi
 {
     public class Pokemon
     {

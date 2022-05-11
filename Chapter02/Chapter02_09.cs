@@ -8,9 +8,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Chapter2
+namespace Chapter02
 {
-    public class Chapter2_09 : IChapterAsync
+    public class Chapter02_09 : IChapterAsync
     {
         public async Task Run()
         {

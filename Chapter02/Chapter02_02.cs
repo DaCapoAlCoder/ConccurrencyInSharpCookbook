@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Chapter2
+namespace Chapter02
 {
-    public class Chapter2_02 : IChapterAsync
+    public class Chapter02_02 : IChapterAsync
     {
         public async Task Run()
         {

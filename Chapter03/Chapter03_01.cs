@@ -1,13 +1,13 @@
-﻿using Chapter3.CommonApi;
+﻿using Chapter03.CommonApi;
 using Common;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Chapter3
+namespace Chapter03
 {
-    public class Chapter3_01 : IChapterAsync
+    public class Chapter03_01 : IChapterAsync
     {
         // API to use for example
         public async Task Run()

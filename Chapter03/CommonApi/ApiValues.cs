@@ -3,7 +3,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 
-namespace Chapter3.CommonApi
+namespace Chapter03.CommonApi
 {
     public class ApiValues
     {

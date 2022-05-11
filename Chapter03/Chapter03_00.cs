@@ -1,6 +1,6 @@
-﻿namespace Chapter3
+﻿namespace Chapter03
 {
-    public class Chapter3_00
+    public class Chapter03_00
     {
         // Async Streams
         // Standard async can only return once in the form of Task<T>

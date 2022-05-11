@@ -8,10 +8,10 @@ using System.Numerics;
 using System.Threading;
 using System.Linq;
 
-namespace Chapter4
+namespace Chapter04
 {
     [SuppressMessage("Usage", "CA1416", Justification = "Code runs on Windows")]
-    public class Chapter4_01 : IChapter
+    public class Chapter04_01 : IChapter
     {
         public void Run()
         {

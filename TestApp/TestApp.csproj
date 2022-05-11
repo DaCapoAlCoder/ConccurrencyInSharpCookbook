@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Chapter2\Chapter2.csproj" />
-    <ProjectReference Include="..\Chapter3\Chapter3.csproj" />
-    <ProjectReference Include="..\Chapter4\Chapter4.csproj" />
+    <ProjectReference Include="..\Chapter02\Chapter02.csproj" />
+    <ProjectReference Include="..\Chapter03\Chapter03.csproj" />
+    <ProjectReference Include="..\Chapter04\Chapter04.csproj" />
   </ItemGroup>
 
 </Project>

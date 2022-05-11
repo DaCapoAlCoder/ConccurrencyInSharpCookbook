@@ -3,9 +3,9 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Chapter2
+namespace Chapter02
 {
-    public class Chapter2_05 : IChapterAsync
+    public class Chapter02_05 : IChapterAsync
     {
         public async Task Run()
         {
