@@ -41,7 +41,7 @@ namespace Chapter02
             Console.WriteLine(mockDownloadTask.IsCompleted);
 
             //If the completed task is the timeout task return null otherwise return a result
-            //from the mockdownload task
+            //from the mock download task
             if (completedTask == timeoutTask)
             {
                 return null;
