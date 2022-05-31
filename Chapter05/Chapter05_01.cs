@@ -30,11 +30,11 @@ namespace Chapter05
             var multiplyBlock = new TransformBlock<int, int>(item => item * 2);
             var subtractBlock = new TransformBlock<int, int>(item => item - 2);
 
-            // By default Dataflow blocks only propegate data and not errors nor completions
-            // This option allows completions to be propegated forward
-            // Propegate completion option will propegate data as well as completions
+            // By default Dataflow blocks only propagate data and not errors nor completions
+            // This option allows completions to be propagated forward
+            // Propagate completion option will propagate data as well as completions
 
-            // Propegate Completion will also propegate errors which will be wrapped
+            // Propagate Completion will also propagate errors which will be wrapped
             // in an AggregateException
 
             var options = new DataflowLinkOptions { PropagateCompletion = true };
@@ -45,11 +45,21 @@ namespace Chapter05
             // the block will then become stalled until that issues is resolved
             multiplyBlock.LinkTo(subtractBlock, options);
 
-
             // ...
+
+            // If data is sent and receive is not awaited calling complete and awaiting 
+            // completion just causes the program to stall. Perhaps data is "stuck" in the block
+            await multiplyBlock.SendAsync(10);
+
 
             // The first block's completion is automatically propagated to the second block.
             multiplyBlock.Complete();
+
+            // Must receive data from the final block. Trying this on Multiply caused an error
+            int output = await subtractBlock.ReceiveAsync();
+            Console.WriteLine(output);
+
+            // Once the data is received (or no data is sent) the completion can be awaited
             await subtractBlock.Completion;
         }
     }
