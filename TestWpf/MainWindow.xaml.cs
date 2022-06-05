@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chapter06;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,12 +24,18 @@ namespace TestWpf
         public MainWindow()
         {
             InitializeComponent();
-            Deadlock();
+        }
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Chapter06_01 chapter06_1 = new();
+            await chapter06_1.Run();
+
+            //Deadlock();
         }
         async Task WaitAsync()
         {
             // This await will capture the current context ...
-            await Task.Delay(TimeSpan.FromSeconds(1));
+            await Task.Delay(TimeSpan.FromSeconds(2));
             // ... and will attempt to resume the method here in that context.
         }
 
@@ -38,7 +45,8 @@ namespace TestWpf
             Task task = WaitAsync();
 
             // Synchronously block, waiting for the async method to complete.
-            task.Wait(3000);
+            task.Wait();
+            MessageBox.Show("This will show if not deadlocked");
         }
     }
 }
