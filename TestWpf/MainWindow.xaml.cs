@@ -1,18 +1,7 @@
 ﻿using Chapter06;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace TestWpf
 {
@@ -25,13 +14,18 @@ namespace TestWpf
         {
             InitializeComponent();
         }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            Chapter06_01 chapter06_1 = new();
-            await chapter06_1.Run();
+            //Chapter06_01 chapter06_01 = new();
+            //await chapter06_01.Run();
+
+            Chapter06_02 chapter06_02 = new();
+            chapter06_02.Run();
 
             //Deadlock();
         }
+
         async Task WaitAsync()
         {
             // This await will capture the current context ...
