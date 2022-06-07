@@ -17,13 +17,16 @@ namespace TestWpf
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+            //Deadlock();
+
             //Chapter06_01 chapter06_01 = new();
             //await chapter06_01.Run();
 
-            Chapter06_02 chapter06_02 = new();
-            chapter06_02.Run();
+            //Chapter06_02 chapter06_02 = new();
+            //chapter06_02.Run();
 
-            //Deadlock();
+            Chapter06_03 chapter06_03 = new();
+            chapter06_03.Run();
         }
 
         async Task WaitAsync()
