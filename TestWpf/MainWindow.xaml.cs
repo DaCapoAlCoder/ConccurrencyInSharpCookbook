@@ -25,8 +25,11 @@ namespace TestWpf
             //Chapter06_02 chapter06_02 = new();
             //chapter06_02.Run();
 
-            Chapter06_03 chapter06_03 = new();
-            chapter06_03.Run();
+            //Chapter06_03 chapter06_03 = new();
+            //chapter06_03.Run();
+
+            Chapter06_04 chapter06_04 = new();
+            chapter06_04.Run();
         }
 
         async Task WaitAsync()
