@@ -28,8 +28,11 @@ namespace TestWpf
             //Chapter06_03 chapter06_03 = new();
             //chapter06_03.Run();
 
-            Chapter06_04 chapter06_04 = new();
-            chapter06_04.Run();
+            //Chapter06_04 chapter06_04 = new();
+            //chapter06_04.Run();
+
+            Chapter06_05 chapter06_05 = new();
+            chapter06_05.Run();
         }
 
         async Task WaitAsync()
