@@ -11,7 +11,6 @@ namespace Chapter07
         class Sut
         {
             public Task<bool> MyMethodAsync(bool returnVal = false) => Task.FromResult(returnVal);
-            public async void MyVoidMethodAsync() { }
 
             public Task<bool> ThrowException() => throw new InvalidOperationException();
         }
