@@ -14,7 +14,7 @@ namespace Chapter07
     {
 
         [TestMethod]
-        public async Task MyMethodAsync_DoesNotThrow()
+        public void MyMethodAsync_DoesNotThrow()
         {
             var objectUnderTest = new Sut(); // ...;
             // Cannot await an async void method. This will not work

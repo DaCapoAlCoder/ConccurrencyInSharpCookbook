@@ -14,4 +14,8 @@
     <PackageReference Include="Nito.AsyncEx.Context" Version="5.1.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Chapter05\Chapter05.csproj" />
+  </ItemGroup>
+
 </Project>

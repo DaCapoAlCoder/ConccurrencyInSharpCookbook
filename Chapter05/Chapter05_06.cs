@@ -28,7 +28,7 @@ namespace Chapter05
         }
 
         // Propagator blocks are both data targets and a source of data
-        IPropagatorBlock<int, int> CreateMyCustomBlock()
+        public IPropagatorBlock<int, int> CreateMyCustomBlock()
         {
             var multiplyBlock = new TransformBlock<int, int>(item => item * 2);
             var addBlock = new TransformBlock<int, int>(item => item + 2);
