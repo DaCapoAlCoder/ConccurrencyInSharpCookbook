@@ -101,8 +101,11 @@ namespace TestApp
             //Chapter08_01 chapter08_01 = new();
             //await chapter08_01.Run();
 
-            Chapter08_02 chapter08_02 = new();
-            await chapter08_02.Run();
+            //Chapter08_02 chapter08_02 = new();
+            //await chapter08_02.Run();
+
+            Chapter08_03 chapter08_03 = new();
+            await chapter08_03.Run();
 
             #endregion
 
