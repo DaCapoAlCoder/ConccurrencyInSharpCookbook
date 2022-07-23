@@ -14,14 +14,27 @@ namespace Chapter08
     {
         public async Task Run()
         {
-            await Test();
-            var multiplyBlock = new TransformBlock<int, int>(item => item * 2);
-            await GetValuesAsync().WriteToBlockAsync(multiplyBlock);
-            bool yes = await multiplyBlock.TryReceiveAll(out var items);
+            await ConvertDataFlowPipelineToAsyncStream();
+
+            await PassEnumerableStreamToDataFlowPipeline();
         }
-        async Task Test()
+
+        private async Task PassEnumerableStreamToDataFlowPipeline()
         {
-            // The idea is to adapt a dataflow block to an async stream (asynchronously yieldable loop)
+            // Passes an enumerable stream of  values into a dataflow pipeline
+            var multiplyBlock = new TransformBlock<int, int>(item => item * 2);
+            IAsyncEnumerable<int> asyncEnumerable = GetValuesAsync();
+            await asyncEnumerable.WriteToBlockAsync(multiplyBlock);
+            multiplyBlock.TryReceiveAll(out var items);
+            foreach (var item in items)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        async Task ConvertDataFlowPipelineToAsyncStream()
+        {
+            // The idea is to adapt a dataflow block to an async stream (asynchronously yield-able loop)
             // so that the data flow block can be consumed in a part of the application that uses a stream
             var multiplyBlock = new TransformBlock<int, int>(value => value * 2);
 
@@ -48,7 +61,7 @@ namespace Chapter08
     public static class DataflowExtensions
     {
         // This extension method is used just to get the data from the data flow block
-        // its not absolutely necessary and is more just enacpsulation
+        // its not absolutely necessary and is more just encapsulation
         public static bool TryReceiveItem<T>(this ISourceBlock<T> block, out T value)
         {
             if (block is IReceivableSourceBlock<T> receivableSourceBlock)
@@ -99,10 +112,13 @@ namespace Chapter08
         {
             try
             {
+                // gets values from the enumerable as it yields
                 await foreach (var item in enumerable.WithCancellation(token).ConfigureAwait(false))
                 {
+                    // Take the value and just send it through the pipeline
                     await block.SendAsync(item, token).ConfigureAwait(false);
                 }
+                // complete the block once the enumerable stream ends
                 block.Complete();
             }
             catch (Exception ex)
