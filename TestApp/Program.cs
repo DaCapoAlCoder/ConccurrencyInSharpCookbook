@@ -131,8 +131,11 @@ namespace TestApp
             //Chapter09_02 chapter09_02 = new();
             //chapter09_02.Run();
 
-            Chapter09_03 chapter09_03 = new();
-            chapter09_03.Run();
+            //Chapter09_03 chapter09_03 = new();
+            //chapter09_03.Run();
+
+            Chapter09_04 chapter09_04 = new();
+            chapter09_04.Run();
             #endregion
 
         }
