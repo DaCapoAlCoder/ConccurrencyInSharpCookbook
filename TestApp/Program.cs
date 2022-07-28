@@ -128,8 +128,11 @@ namespace TestApp
             //Chapter09_01 chapter09_01 = new();
             //chapter09_01.Run();
 
-            Chapter09_02 chapter09_02 = new();
-            chapter09_02.Run();
+            //Chapter09_02 chapter09_02 = new();
+            //chapter09_02.Run();
+
+            Chapter09_03 chapter09_03 = new();
+            chapter09_03.Run();
             #endregion
 
         }
