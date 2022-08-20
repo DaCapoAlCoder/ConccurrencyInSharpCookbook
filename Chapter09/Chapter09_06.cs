@@ -24,7 +24,8 @@ namespace Chapter09
             await Task.WhenAll(task1, task2, task3);
 
             // The BlockingCollection is good for multiple threads
-            // but not so good for accessing asynchronously,
+            // but not so good for accessing asynchronously, such as a UI where
+            // the consumer (UI) thread would be blocked waiting for entries to come in
             // Channels and BufferBlocks can be used to create non blocking
             // async accessed queues
         }
