@@ -9,9 +9,6 @@ namespace Chapter10_Wpf
 {
     public class Chapter10_01_Wpf : IChapter
     {
-        private Button StartButton;
-        private Button CancelButton;
-        private CancellationTokenSource _cts;
 
         public void Run()
         {
@@ -19,58 +16,61 @@ namespace Chapter10_Wpf
             // and assigns the CancelationTokenSource. The cancel button will invoke the
             // the cancellation of the delay. The Start process can end in the three ways
             // success, cancellation or error
-
-            StackPanel stackPanel = new StackPanel { Orientation = Orientation.Vertical };
-            StartButton = new Button { Content = "Start Button" };
-            CancelButton = new Button { Content = "Cancel Button", IsEnabled = false };
-            StartButton.Click += StartButton_Click;
-            CancelButton.Click += CancelButton_Click;
-            stackPanel.Children.Add(StartButton);
-            stackPanel.Children.Add(CancelButton);
-
             Win win = new Win();
-            win.Content = stackPanel;
             win.Show();
+
         }
 
-        public async void StartButton_Click(object sender, RoutedEventArgs e)
+        class Win : Window
         {
-            StartButton.IsEnabled = false;
-            CancelButton.IsEnabled = true;
-            try
+            private Button StartButton;
+            private Button CancelButton;
+            private CancellationTokenSource _cts;
+
+            public Win()
             {
-                _cts = new CancellationTokenSource();
-                CancellationToken token = _cts.Token;
-                await Task.Delay(TimeSpan.FromSeconds(5), token);
-                MessageBox.Show("Delay completed successfully.");
+                StackPanel stackPanel = new StackPanel { Orientation = Orientation.Vertical };
+                StartButton = new Button { Content = "Start Button" };
+                CancelButton = new Button { Content = "Cancel Button", IsEnabled = false };
+                StartButton.Click += StartButton_Click;
+                CancelButton.Click += CancelButton_Click;
+                stackPanel.Children.Add(StartButton);
+                stackPanel.Children.Add(CancelButton);
+                Content = stackPanel;
             }
-            catch (OperationCanceledException)
+
+            public async void StartButton_Click(object sender, RoutedEventArgs e)
             {
-                MessageBox.Show("Delay was cancelled.");
+                StartButton.IsEnabled = false;
+                CancelButton.IsEnabled = true;
+                try
+                {
+                    _cts = new CancellationTokenSource();
+                    CancellationToken token = _cts.Token;
+                    await Task.Delay(TimeSpan.FromSeconds(5), token);
+                    MessageBox.Show("Delay completed successfully.");
+                }
+                catch (OperationCanceledException)
+                {
+                    MessageBox.Show("Delay was cancelled.");
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Delay completed with error.");
+                    throw;
+                }
+                finally
+                {
+                    StartButton.IsEnabled = true;
+                    CancelButton.IsEnabled = false;
+                }
             }
-            catch (Exception)
+
+            public void CancelButton_Click(object sender, RoutedEventArgs e)
             {
-                MessageBox.Show("Delay completed with error.");
-                throw;
-            }
-            finally
-            {
-                StartButton.IsEnabled = true;
+                _cts.Cancel();
                 CancelButton.IsEnabled = false;
             }
-        }
-
-        public void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            _cts.Cancel();
-            CancelButton.IsEnabled = false;
-        }
-    }
-
-    class Win : Window
-    {
-        public Win()
-        {
         }
     }
 }
