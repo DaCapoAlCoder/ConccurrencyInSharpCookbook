@@ -15,7 +15,8 @@ namespace Chapter10
             // Creating a method that can be cancelled when the work being 
             // carried out does not itself have a cancellation API
 
-            CancellationTokenSource cts = new();
+            // Note that CancellationTokenSources are disposable
+            using CancellationTokenSource cts = new();
             var task1 = Task.Run(() => CancelableMethod(cts.Token));
             await Task.Delay(TimeSpan.FromSeconds(3));
             cts.Cancel();
@@ -28,10 +29,10 @@ namespace Chapter10
                 Console.WriteLine("Operation was cancelled");
             }
 
-            cts = new();
-            task1 = Task.Run(() => CancelableMethodFastLoop(cts.Token));
+            using CancellationTokenSource cts2 = new();
+            task1 = Task.Run(() => CancelableMethodFastLoop(cts2.Token));
             await Task.Delay(TimeSpan.FromSeconds(3));
-            cts.Cancel();
+            cts2.Cancel();
             try
             {
                 await task1;

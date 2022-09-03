@@ -41,7 +41,7 @@ namespace Chapter10
             Console.WriteLine($"With default body was:\n {body}");
 
             // The overloaded method can have a CancellationToken passed in
-            CancellationTokenSource cts = new();
+            using CancellationTokenSource cts = new();
             task = CancelableMethodWithOverload(cts.Token);
             cts.Cancel();
             body = await task;
@@ -49,9 +49,9 @@ namespace Chapter10
 
             // The default parameter can also be over written with a cancellation
             // token which can be used to cancel the request 
-            cts = new();
-            task = CancelableMethodWithDefault(cts.Token);
-            cts.Cancel();
+            using CancellationTokenSource cts2 = new();
+            task = CancelableMethodWithDefault(cts2.Token);
+            cts2.Cancel();
             body = await task;
             Console.WriteLine($"With default body was:\n {body}");
         }
