@@ -123,7 +123,7 @@ namespace Chapter10
                 // If we get here, the operation was cancelled before it completed.
                 Console.WriteLine("Operation was cancelled");
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 // If we get here, the operation completed with an error
                 //  before the cancellation took effect.
