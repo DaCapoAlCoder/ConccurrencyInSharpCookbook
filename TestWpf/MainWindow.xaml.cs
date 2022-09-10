@@ -38,8 +38,11 @@ namespace TestWpf
             //Chapter06_05 chapter06_05 = new();
             //chapter06_05.Run();
 
-            Chapter10_01_Wpf chapter10_01_Wpf = new();
-            chapter10_01_Wpf.Run();
+            //Chapter10_01_Wpf chapter10_01_Wpf = new();
+            //chapter10_01_Wpf.Run();
+
+            Chapter10_06 chapter10_06 = new();
+            chapter10_06.Run();
 
         }
 
