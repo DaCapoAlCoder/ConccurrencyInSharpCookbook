@@ -185,8 +185,11 @@ namespace TestApp
             //Chapter10_06 chapter10_06 = new();
             //await chapter10_06.Run();
 
-            Chapter10_07 chapter10_07 = new();
-            await chapter10_07.Run();
+            //Chapter10_07 chapter10_07 = new();
+            //await chapter10_07.Run();
+
+            Chapter10_08 chapter10_08 = new();
+            await chapter10_08.Run();
             #endregion
         }
     }

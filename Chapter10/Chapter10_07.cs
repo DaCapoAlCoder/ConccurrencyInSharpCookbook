@@ -14,7 +14,7 @@ namespace Chapter10
 
         public async Task Run()
         {
-            CancellationTokenSource cts = new();
+            using CancellationTokenSource cts = new();
             var customBlock = CreateMyCustomBlock(cts.Token);
 
             await customBlock.SendAsync(10);
