@@ -31,7 +31,7 @@ namespace Chapter10
 
             // The combined token will cancel when called explicitly, this does not affect
             // the linked token. When the linked token is cancelled the combined token will cancel
-            // In other words cancelling outside cancels both, canceling inside only cancels inside
+            // In other words cancelling outside cancels both, cancelling inside only cancels inside
             using CancellationTokenSource cts = CancellationTokenSource
                 .CreateLinkedTokenSource(cancellationToken);
 
