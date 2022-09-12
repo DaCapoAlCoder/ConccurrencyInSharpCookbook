@@ -13,6 +13,7 @@
     <ProjectReference Include="..\Chapter08\Chapter08.csproj" />
     <ProjectReference Include="..\Chapter09\Chapter09.csproj" />
     <ProjectReference Include="..\Chapter10\Chapter10.csproj" />
+    <ProjectReference Include="..\Chapter11\Chapter11.csproj" />
   </ItemGroup>
 
 </Project>
