@@ -20,9 +20,9 @@ namespace Chapter11
             Console.WriteLine($"Initialised with value {initValue}");
 
         }
+
         interface IMyFundamentalType { }
         interface IMyComposedType { }
-
 
         /// <summary>
         /// Marks a type as requiring asynchronous initialization 
