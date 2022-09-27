@@ -6,6 +6,7 @@ using Chapter08;
 using Chapter09;
 using Chapter10;
 using Chapter11;
+using Chapter12;
 using System.Threading.Tasks;
 
 namespace TestApp
@@ -199,7 +200,7 @@ namespace TestApp
             //await chapter10_09.Run();
             #endregion
 
-            #region Chapter 11
+           #region Chapter 11
             //Chapter11_01 chapter11_01 = new();
             //await chapter11_01.Run();
 
@@ -215,8 +216,14 @@ namespace TestApp
             //Chapter11_05 chapter11_05 = new();
             //await chapter11_05.Run();
 
-            Chapter11_06 chapter11_06 = new();
-            await chapter11_06.Run();
+            //Chapter11_06 chapter11_06 = new();
+            //await chapter11_06.Run();
+            #endregion
+
+            #region Chapter 12
+            Chapter12_00 chapter12_00 = new();
+            await chapter12_00.Run();
+
             #endregion
         }
     }
