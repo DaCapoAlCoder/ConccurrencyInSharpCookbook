@@ -58,6 +58,7 @@ namespace Chapter12
 
         // This lock protects the _value field.
         // The constructor value indicates how many threads the lock will allow in
+        // Locks should be kept private within the class do not expose them
         private readonly SemaphoreSlim _mutex = new SemaphoreSlim(1);
 
         private int _value;
