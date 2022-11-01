@@ -28,6 +28,9 @@ namespace Chapter13
             // operation, execution for that thread will stop, and a new thread can start executing within
             // the block that is awaiting. This applies to all synchronisation done using the exclusive
             // scheduler
+
+            // Any Data Flow block can take a scheduler even BufferBlocks which may not execute user code
+            // but still has clean up operations that will execute with the given scheduler
         }
 
         async Task Test()
