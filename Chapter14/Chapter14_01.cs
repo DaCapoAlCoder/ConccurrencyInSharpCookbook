@@ -211,6 +211,8 @@ namespace Chapter14
               await Task.Delay(TimeSpan.FromSeconds(2));
               return _simpleValueNito++;
           },
+          // The flag argument allows similar error handling behaviour to the
+          // by-hand implementation above
           AsyncLazyFlags.RetryOnFailure);
 
         public async Task UseSharedIntegerNitoAsync()
