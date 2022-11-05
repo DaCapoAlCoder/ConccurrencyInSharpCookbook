@@ -10,6 +10,7 @@
     <ProjectReference Include="..\Chapter06\Chapter06.csproj" />
     <ProjectReference Include="..\Chapter10\Chapter10.csproj" />
     <ProjectReference Include="..\Chapter10_Wpf\Chapter10_Wpf.csproj" />
+    <ProjectReference Include="..\Chapter14_Wpf\Chapter14_Wpf.csproj" />
   </ItemGroup>
 
 </Project>

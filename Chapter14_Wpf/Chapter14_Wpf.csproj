@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+    <PackageReference Include="Nito.Mvvm.Async" Version="1.0.0-pre-04" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Window2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>

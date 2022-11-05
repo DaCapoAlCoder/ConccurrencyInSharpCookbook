@@ -1,6 +1,7 @@
 ﻿using Chapter06;
 using Chapter10;
 using Chapter10_Wpf;
+using Chapter14_Wpf;
 using System;
 using System.Threading.Tasks;
 using System.Windows;
@@ -18,7 +19,6 @@ namespace TestWpf
             InitializeComponent();
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "<Pending>")]
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             //Deadlock();
@@ -41,8 +41,11 @@ namespace TestWpf
             //Chapter10_01_Wpf chapter10_01_Wpf = new();
             //chapter10_01_Wpf.Run();
 
-            Chapter10_06 chapter10_06 = new();
-            chapter10_06.Run();
+            //Chapter10_06 chapter10_06 = new();
+            //chapter10_06.Run();
+
+            Chapter14_03 chapter14_03 = new();
+            chapter14_03.Run();
 
         }
 
