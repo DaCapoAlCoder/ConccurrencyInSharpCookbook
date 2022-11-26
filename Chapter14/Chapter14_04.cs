@@ -15,6 +15,9 @@ namespace Chapter14
         {
             await DoLongOperationAsync();
             await DoALongOperationAsync();
+
+            // Async static works for synchronous and asynchronous code
+            // It can be used to replace the old ThreadStaticAttribute
         }
 
         private static AsyncLocal<Guid> _operationId = new AsyncLocal<Guid>();
@@ -108,7 +111,9 @@ namespace Chapter14
                     // If two calls are made to push, it only pops off one
                     // leaving the other in there on dispose. The stack is 
                     // set to null though so that cleans it up, but its doesn't
-                    // seem great. 
+                    // seem great. It could be solved with a for loop, but the 
+                    // use case for auto popping in this manner would need to be
+                    // examined
                     _stack?.Pop();
                     _stack = null;
                 }
