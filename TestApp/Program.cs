@@ -266,8 +266,12 @@ namespace TestApp
             //Chapter14_04 chapter14_04 = new();
             //await chapter14_04.Run();
 
-            Chapter14_05 chapter14_05 = new();
-            await chapter14_05.Run();
+            //Chapter14_05 chapter14_05 = new();
+            //await chapter14_05.Run();
+
+            Chapter14_06 chapter14_06 = new();
+            await chapter14_06.Run();
+            
             #endregion
         }
     }
