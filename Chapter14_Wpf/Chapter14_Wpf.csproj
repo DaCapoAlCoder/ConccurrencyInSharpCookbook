@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
     <PackageReference Include="Nito.Mvvm.Async" Version="1.0.0-pre-04" />
+    <PackageReference Include="System.Reactive" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -44,8 +44,11 @@ namespace TestWpf
             //Chapter10_06 chapter10_06 = new();
             //chapter10_06.Run();
 
-            Chapter14_03 chapter14_03 = new();
-            chapter14_03.Run();
+            //Chapter14_03 chapter14_03 = new();
+            //chapter14_03.Run();
+
+            Chapter14_07 chapter14_07 = new();
+            chapter14_07.Run();
 
         }
 
