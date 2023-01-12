@@ -19,9 +19,11 @@ namespace TestApp
         static async Task Main(string[] args)
         {
             #region Chapter1
-            Chapter01_01 chapter01_01 = new();
-            await chapter01_01.Run();
+            //Chapter01_01 chapter01_01 = new();
+            //await chapter01_01.Run();
 
+            Chapter01_02 chapter01_02 = new();
+            chapter01_02.Run();
             #endregion
 
             #region Chapter2
