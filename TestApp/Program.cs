@@ -1,4 +1,5 @@
-﻿using Chapter02;
+﻿using Chapter01;
+using Chapter02;
 using Chapter03;
 using Chapter04;
 using Chapter05;
@@ -17,6 +18,12 @@ namespace TestApp
     {
         static async Task Main(string[] args)
         {
+            #region Chapter1
+            Chapter01_01 chapter01_01 = new();
+            await chapter01_01.Run();
+
+            #endregion
+
             #region Chapter2
             //Chapter02_01 chapter02_1 = new();
             //await chapter02_1.Run();
@@ -269,9 +276,9 @@ namespace TestApp
             //Chapter14_05 chapter14_05 = new();
             //await chapter14_05.Run();
 
-            Chapter14_06 chapter14_06 = new();
-            await chapter14_06.Run();
-            
+            //Chapter14_06 chapter14_06 = new();
+            //await chapter14_06.Run();
+
             #endregion
         }
     }
