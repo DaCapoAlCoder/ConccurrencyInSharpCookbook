@@ -19,7 +19,7 @@ namespace TestWpf
             InitializeComponent();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             //Deadlock();
 
@@ -49,24 +49,6 @@ namespace TestWpf
 
             Chapter14_07 chapter14_07 = new();
             chapter14_07.Run();
-
-        }
-
-        async Task WaitAsync()
-        {
-            // This await will capture the current context ...
-            await Task.Delay(TimeSpan.FromSeconds(2));
-            // ... and will attempt to resume the method here in that context.
-        }
-
-        void Deadlock()
-        {
-            // Start the delay.
-            Task task = WaitAsync();
-
-            // Synchronously block, waiting for the async method to complete.
-            task.Wait();
-            MessageBox.Show("This will show if not deadlocked");
         }
     }
 }
