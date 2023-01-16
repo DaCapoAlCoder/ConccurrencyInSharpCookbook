@@ -40,8 +40,11 @@ namespace TestApp
             //Chapter01_07 chapter01_07 = new();
             //chapter01_07.Run();
 
-            Chapter01_08 chapter01_08 = new();
-            chapter01_08.Run();
+            //Chapter01_08 chapter01_08 = new();
+            //chapter01_08.Run();
+
+            Chapter01_09 chapter01_09 = new();
+            chapter01_09.Run();
             #endregion
 
             #region Chapter2
