@@ -7,8 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 using Microsoft.Reactive.Testing;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Nito.AsyncEx;
-using static AssertEx;
 
 class TestMethodAttribute: Attribute { }
 
@@ -74,6 +74,68 @@ class ch07r01C
       return 13;
     }
   }
+}
+public class ch07r02
+{
+    static class MyClass
+    {
+        public static Task<double> DivideAsync(int dividend, int divisor)
+        {
+            double value = dividend / divisor;
+            return Task.FromResult(value);
+
+        }
+    }
+
+    // Not a recommended solution; see below.
+    [TestMethod]
+    [ExpectedException(typeof(DivideByZeroException))]
+    public async Task Divide_WhenDivisorIsZero_ThrowsDivideByZeroExceptionAttribute()
+    {
+        await MyClass.DivideAsync(4, 0);
+    }
+
+    [Xunit.Fact]
+    public async Task Divide_WhenDivisorIsZero_ThrowsDivideByZeroExceptionAssert()
+    {
+        //This will assert an exception occurs only in the method being tested
+        await Xunit.Assert.ThrowsAsync<DivideByZeroException>(async () => await MyClass.DivideAsync(4, 0));
+    }
+
+    /// <summary>
+    /// Ensures that an asynchronous delegate throws an exception.
+    /// </summary>
+    /// <typeparam name="TException">
+    /// The type of exception to expect
+    /// </typeparam>
+    /// <param name="action">The asynchronous delegate to test.</param>
+    /// <param name="allowDerivedTypes">Whether derived types should be accepted</param>
+    public static async Task<TException> ThrowsAsync<TException>(Func<Task> action, bool allowDerivedTypes = true) where TException : Exception
+    {
+        try
+        {
+            await action();
+            var name = typeof(Exception).Name;
+            Assert.Fail($"Delegate did not throw expeted exception {name}");
+            return null;
+        }
+        catch (Exception ex)
+        {
+            if(allowDerivedTypes && !(ex is TException))
+            {
+                Assert.Fail($"Delegate threw exception of type {ex.GetType().Name}, " +
+                    $"but {typeof(TException).Name} or a derived type was expeced.");
+
+            }
+
+            if(!allowDerivedTypes && ex.GetType() != typeof(TException))
+            {
+                Assert.Fail($"Delegate threw exception of type {ex.GetType().Name}, " +
+                    $"but {typeof(TException).Name} was expeced.");
+            }
+            return (TException)ex;
+        }
+    }
 }
 
 class ch07r03
@@ -202,7 +264,7 @@ class ch07r05A
     var stub = new FailureHttpServiceStub();
     var my = new MyTimeoutClass(stub);
 
-    await ThrowsAsync<HttpRequestException>(async () =>
+    await ch07r02.ThrowsAsync<HttpRequestException>(async () =>
     {
       await my.GetStringWithTimeout("http://www.example.com/")
           .SingleAsync();

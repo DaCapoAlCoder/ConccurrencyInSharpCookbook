@@ -456,9 +456,9 @@ class ch02r09A
 
 class ch02r09B
 {
-  static class Program
+  static class ch02_Program
   {
-    static void Main(string[] args)
+    static void ch02_Main(string[] args)
     {
       try
       {
