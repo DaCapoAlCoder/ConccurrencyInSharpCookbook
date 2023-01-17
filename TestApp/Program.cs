@@ -43,8 +43,11 @@ namespace TestApp
             //Chapter01_08 chapter01_08 = new();
             //chapter01_08.Run();
 
-            Chapter01_09 chapter01_09 = new();
-            chapter01_09.Run();
+            //Chapter01_09 chapter01_09 = new();
+            //chapter01_09.Run();
+
+            Chapter01_10 chapter01_10 = new();
+            chapter01_10.Run();
             #endregion
 
             #region Chapter2
