@@ -31,9 +31,9 @@ namespace Chapter07
                 IScheduler scheduler = null)
             {
                 return _httpService.GetString(url)
-                    // In order to make this method testable, the schedular is required
+                    // In order to make this method testable, the scheduler is required
                     // so that it can be mocked out during testing, this avoids waiting
-                    // for the actual timeout to complete in realtime
+                    // for the actual timeout to complete in real-time
                     .Timeout(TimeSpan.FromSeconds(1), scheduler ?? Scheduler.Default);
             }
         }
@@ -53,7 +53,7 @@ namespace Chapter07
         [TestMethod]
         public void MyTimeoutClass_SuccessfulGetShortDelay_ReturnsResult()
         {
-            // The test scheduler is part of the reactive testing nuget package
+            // The test scheduler is part of the reactive testing NuGet package
             var scheduler = new TestScheduler();
             var stub = new SuccessHttpServiceStub
             {

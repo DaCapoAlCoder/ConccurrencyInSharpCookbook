@@ -16,7 +16,7 @@ namespace Chapter02
         {
 
             // Adding the async Task override of execute allows for more testable code. There is an assumption
-            // that without being able to catch exceptions Xunit functions like Record.Exception would not work 
+            // that without being able to catch exceptions xUnit functions like Record.Exception would not work 
             // on async void methods.
             MyAsyncCommand command1 = new();
             try
@@ -64,7 +64,7 @@ namespace Chapter02
             }
 
 
-            // ... // Other members (CanExecute, etc)
+            // ... // Other members (CanExecute, etc.)
             public bool CanExecute(object parameter)
             {
                 CanExecuteChanged?.Invoke(null, null);
@@ -83,7 +83,7 @@ namespace Chapter02
                 //     - UseExceptionHandler middleware
                 // respectively. 
 
-                // Setups a synchronization context for the console app
+                // Sets up a synchronization context for the console app
                 // Don't set synch context on threads you don't own.  Threads you own
                 //     - The main thread in a console app
                 //     - Any threads you start yourself
@@ -91,7 +91,7 @@ namespace Chapter02
             }
             catch
             {
-                Console.WriteLine("This exception was caught because it was propegated to the syncrhonization context ");
+                Console.WriteLine("This exception was caught because it was propagated to the synchronization context ");
             }
             Console.WriteLine("The code can still execute");
         }
@@ -99,8 +99,8 @@ namespace Chapter02
         // BAD CODE!!!
         // In the real world, do not use async void unless you have to.
 
-        //Because there is a syncrhonization context for this method, the exception
-        //will propegate to that thread allowing it to be caught and handled
+        //Because there is a synchronization context for this method, the exception
+        //will propagate to that thread allowing it to be caught and handled
         static async void MainAsync(string[] args)
         {
             // In the debugger execution stops here while the exception gets thrown

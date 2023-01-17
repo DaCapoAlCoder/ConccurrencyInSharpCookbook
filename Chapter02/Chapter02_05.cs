@@ -20,13 +20,13 @@ namespace Chapter02
 
             // Wait for either of the tasks to complete.
             // WhenAny returns an inner Task when awaited
-            // This outter task returned from the initial await wont complete as faulted or cancelled.
-            // It always completes sucessfully
+            // This outer task returned from the initial await wont complete as faulted or cancelled.
+            // It always completes successfully
 
             // WhenAny can be combined with a delay task to create a timeout. However the non-timeout task
             // will still run after the delay expires. This in turn will require it be cancelled. It is
             // better to just use a cancellation token with a timeout built in (as overload on the constructor)
-            // as this does both jobs of timeing out and cancelling.
+            // as this does both jobs of timing out and cancelling.
 
             // Its possible to use WhenAny to maintain a list of tasks and process them as they complete
             // however, this results in an O(N^2) operation and cannot be used for large amount of tasks
@@ -47,7 +47,7 @@ namespace Chapter02
 
             // Return the length of the data retrieved from that URL.
             // To get the data the inner task must be awaited
-            // Since the outter task always completes successfully this inner task
+            // Since the outer task always completes successfully this inner task
             // will throw any exceptions that have occurred when awaited
             byte[] data = await completedTask;
             int dataLength = data.Length;

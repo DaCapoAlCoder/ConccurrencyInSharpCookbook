@@ -184,7 +184,7 @@ namespace Chapter14
             }
         }
 
-        // These are just the same lazy inits from the previous examples except they use
+        // These are just the same lazy initialisation from the previous examples except they use
         // the AsyncLazy class
         static int _simpleIntValue;
         static readonly AsyncLazy<int> MySharedAsyncLazyInteger =

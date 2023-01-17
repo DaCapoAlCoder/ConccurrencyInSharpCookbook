@@ -9,10 +9,10 @@ namespace Chapter11
     {
         public async Task Run()
         {
-            // One main point from the chapter is that it is the run types that are
-            // awaitable and not the method. So, the use of async is an implementation detail 
-            // so it may require awaiting in the implementation or it may just return a task to
-            // be awaited elsewhere
+            // One main point from the chapter is that it is the return types that can be awaited
+            // and not the method. So, the use of async is an implementation detail so it may
+            // require awaiting in the implementation or it may just return a task to be
+            // awaited elsewhere
             
             MyAsyncClass myAsyncClass = new();
             await UseMyInterfaceAsync(new HttpClient(), myAsyncClass);

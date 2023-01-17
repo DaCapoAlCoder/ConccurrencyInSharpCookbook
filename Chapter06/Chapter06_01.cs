@@ -27,7 +27,7 @@ namespace Chapter06
         Progress<int> CreateStreamFromProgressEvents()
         {
             var progress = new Progress<int>();
-            // From event pattern uses the EventArgs<T> which is common in newer ui frameworks
+            // From event pattern uses the EventArgs<T> which is common in newer UI frameworks
             IObservable<EventPattern<int>> progressReports =
                 Observable.FromEventPattern<int>(
                     // This adds/removes the observable event handler from the progress event
@@ -85,7 +85,7 @@ namespace Chapter06
         {
             var timer = new System.Timers.Timer(interval: 1000) { Enabled = true };
 
-            // Everything above applies its just a little neater using refelection
+            // Everything above applies its just a little neater using reflection
             IObservable<EventPattern<object>> ticks =
                 Observable.FromEventPattern(timer, nameof(System.Timers.Timer.Elapsed));
 

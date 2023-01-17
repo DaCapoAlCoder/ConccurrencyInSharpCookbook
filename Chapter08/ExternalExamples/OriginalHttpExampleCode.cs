@@ -53,7 +53,7 @@ namespace Chapter08
                 HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://www.contoso.com");
 
                 /**
-                  * If you are behind a firewall and you do not have your browser proxy setup
+                  * If you are behind a firewall and you do not have your browser proxy set-up
                   * you need to use the following proxy creation code.
 
                     // Create a proxy object.

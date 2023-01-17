@@ -33,7 +33,7 @@ namespace Chapter04
             }
 
             sw.Stop();
-            Console.WriteLine($"Time to generate {values.Count} ints: {sw.Elapsed}");
+            Console.WriteLine($"Time to generate {values.Count} longs: {sw.Elapsed}");
             return values;
         }
 
@@ -44,8 +44,8 @@ namespace Chapter04
             var result = func(values);
             sw.Stop();
 
-            Console.WriteLine($"Time to sum {values.Count} ints in parallel using {type}: {sw.Elapsed}");
-            Console.WriteLine($"Sum of {values.Count} random ints: {result}");
+            Console.WriteLine($"Time to sum {values.Count} longs in parallel using {type}: {sw.Elapsed}");
+            Console.WriteLine($"Sum of {values.Count} random longs: {result}");
         }
 
         // Note: this is not the most efficient implementation.

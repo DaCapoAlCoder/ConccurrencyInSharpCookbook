@@ -33,14 +33,14 @@ namespace Chapter06
         {
             Observable.Interval(TimeSpan.FromSeconds(1))
                 .Take(8)
-                // A window unlike a buffer will start producing results immediatly
-                // The outter subscription ends once the window size has been filled
+                // A window unlike a buffer will start producing results immediately
+                // The outer subscription ends once the window size has been filled
                 .Window(2)
                 .Subscribe(group =>
                 {
                     Trace.WriteLine($"{DateTime.Now.Second}: Starting new group");
                     // there is an in subscription that will process data coming into the window
-                    // immediatly
+                    // immediately
                     group.Subscribe(
                 x => Trace.WriteLine($"{DateTime.Now.Second}: Saw {x}"),
                 () => Trace.WriteLine($"{DateTime.Now.Second}: Ending group"));

@@ -70,7 +70,7 @@ class ch07r01C
   {
     public async Task<int> SomethingAsync()
     {
-      await Task.Yield(); // force asynchronous behavior
+      await Task.Yield(); // force asynchronous behaviour
       return 13;
     }
   }
@@ -116,7 +116,7 @@ public class ch07r02
         {
             await action();
             var name = typeof(Exception).Name;
-            Assert.Fail($"Delegate did not throw expeted exception {name}");
+            Assert.Fail($"Delegate did not throw expected exception {name}");
             return null;
         }
         catch (Exception ex)
@@ -124,14 +124,14 @@ public class ch07r02
             if(allowDerivedTypes && !(ex is TException))
             {
                 Assert.Fail($"Delegate threw exception of type {ex.GetType().Name}, " +
-                    $"but {typeof(TException).Name} or a derived type was expeced.");
+                    $"but {typeof(TException).Name} or a derived type was expected.");
 
             }
 
             if(!allowDerivedTypes && ex.GetType() != typeof(TException))
             {
                 Assert.Fail($"Delegate threw exception of type {ex.GetType().Name}, " +
-                    $"but {typeof(TException).Name} was expeced.");
+                    $"but {typeof(TException).Name} was expected.");
             }
             return (TException)ex;
         }

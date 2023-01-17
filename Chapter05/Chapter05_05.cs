@@ -13,10 +13,10 @@ namespace Chapter05
     {
         public async Task Run()
         {
-            // One way to deterimine if a block should have parallelism added is to stop
+            // One way to determine if a block should have parallelism added is to stop
             // the block in a debugger and look at the size of the input queue. If its 
-            // larger than exepected some parallelism could be addeded
-            Console.WriteLine("Time with ubounded parallelism");
+            // larger than expected some parallelism could be added
+            Console.WriteLine("Time with unbounded parallelism");
             await Test(DataflowBlockOptions.Unbounded);
             Console.WriteLine("Time with no parallelism");
             await Test(1);

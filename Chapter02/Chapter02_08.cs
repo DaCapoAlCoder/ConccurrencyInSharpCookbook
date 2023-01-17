@@ -38,7 +38,7 @@ namespace Chapter02
         {
             // The exception is thrown by the method and placed on the task.
             Task task = ThrowExceptionAsync();
-            Console.WriteLine($"Task for exception thorwing method has started with status: {task.Status}");
+            Console.WriteLine($"Task for exception throwing method has started with status: {task.Status}");
             try
             {
                 Console.WriteLine("Calling method is still executing before awaiting the tasks");
@@ -47,7 +47,7 @@ namespace Chapter02
             }
             catch (InvalidOperationException ex)
             {
-                Console.WriteLine($"The task is awaited an an exception of {ex.GetType()} was caught");
+                Console.WriteLine($"The task is awaited an exception of {ex.GetType()} was caught");
             }
         }
     }

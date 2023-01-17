@@ -71,7 +71,7 @@ class ch10r01
     }
     catch (OperationCanceledException)
     {
-      // If we get here, the operation was canceled before it completed.
+      // If we get here, the operation was cancelled before it completed.
     }
     catch (Exception)
     {
@@ -103,7 +103,7 @@ class ch10r01B : Window
     }
     catch (OperationCanceledException)
     {
-      MessageBox.Show("Delay was canceled.");
+      MessageBox.Show("Delay was cancelled.");
     }
     catch (Exception)
     {
@@ -266,7 +266,7 @@ class ch10r06B
       CancellationToken token = cancellation.Token;
       // Pass the token to methods that respond to it.
     }
-    // At this point, the token is canceled.
+    // At this point, the token is cancelled.
   }
 }
 

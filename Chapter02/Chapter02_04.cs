@@ -95,7 +95,7 @@ namespace Chapter02
             //But only one of them will actually be thrown by WhenAll            
             // Not that the methods do not throw directly but use the async keyword
             // so that their exceptions will be added to a Task that is return normally
-            // Removing async keyowrd would cause the first exception to be thrown on
+            // Removing async keyword would cause the first exception to be thrown on
             // the line below rather than in WhenAll
             var task1 = ThrowNotImplementedExceptionAsync();
             var task2 = ThrowInvalidOperationExceptionAsync();
@@ -110,7 +110,7 @@ namespace Chapter02
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Two Exceptions occurred in WhenAll. The one thrown by it was was: {ex.GetType()}");
+                Console.WriteLine($"Two Exceptions occurred in WhenAll. The one thrown by it was: {ex.GetType()}");
             }
         }
 
@@ -135,7 +135,7 @@ namespace Chapter02
                 AggregateException allExceptions = allTasks.Exception;
 
                 Console.WriteLine("Two exceptions occurred in WhenAll, awaiting the task instead of the method wraps them in an Aggregate Exception");
-                Console.WriteLine("The exception that occured were:");
+                Console.WriteLine("The exception that occurred were:");
                 foreach(var ex in allExceptions.InnerExceptions)
                 {
                     Console.WriteLine($"{ex.GetType()}");

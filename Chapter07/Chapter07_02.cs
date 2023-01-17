@@ -42,7 +42,7 @@ namespace Chapter07
         /// Ensures that an asynchronous delegate throws an exception.
         /// </summary>
         /// <typeparam name="TException">
-        /// The type of exeption to expect
+        /// The type of exception to expect
         /// </typeparam>
         /// <param name="action">The asynchronous delegate to test.</param>
         /// <param name="allowDerivedTypes">Whether derived types should be accepted</param>
@@ -52,7 +52,7 @@ namespace Chapter07
             {
                 await action();
                 var name = typeof(Exception).Name;
-                Assert.Fail($"Delegate did not throw expeted exception {name}");
+                Assert.Fail($"Delegate did not throw expected exception {name}");
                 return null;
             }
             catch (Exception ex)
@@ -60,14 +60,14 @@ namespace Chapter07
                 if(allowDerivedTypes && !(ex is TException))
                 {
                     Assert.Fail($"Delegate threw exception of type {ex.GetType().Name}, " +
-                        $"but {typeof(TException).Name} or a derived type was expeced.");
+                        $"but {typeof(TException).Name} or a derived type was expected.");
 
                 }
 
                 if(!allowDerivedTypes && ex.GetType() != typeof(TException))
                 {
                     Assert.Fail($"Delegate threw exception of type {ex.GetType().Name}, " +
-                        $"but {typeof(TException).Name} was expeced.");
+                        $"but {typeof(TException).Name} was expected.");
                 }
                 return (TException)ex;
             }

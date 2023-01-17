@@ -265,7 +265,7 @@ class ch02r06A
   }
 
   // Currently, this method prints "2", "3", and "1".
-  // The desired behavior is for this method to print "1", "2", and "3".
+  // The desired behaviour is for this method to print "1", "2", and "3".
   async Task ProcessTasksAsync()
   {
     // Create a sequence of tasks.
@@ -444,7 +444,7 @@ class ch02r09A
       // ... // Asynchronous command implementation goes here.
     }
 
-    // ... // Other members (CanExecute, etc)
+    // ... // Other members (CanExecute, etc.)
     public bool CanExecute(object parameter)
     {
       CanExecuteChanged?.Invoke(null, null);

@@ -14,9 +14,9 @@ namespace Chapter05
         {
             // An encapsulated set of blocks must have both a single input block and a single output block
             // in order to use the Encapsulate method
-            // Multi input/output meshes that are to be encapsulated require a custom class which expsoes
+            // Multi input/output meshes that are to be encapsulated require a custom class which exposes
             // ITargetBlock<T> for the inputs and IReceivableSourceBlock<T> for the outputs
-            // Not all block options may make sense to an encapsualted set of blocks, so a custom options
+            // Not all block options may make sense to an encapsulated set of blocks, so a custom options
             // class can be created and passed in if required
 
             // Encapsulates a multiple blocks into a single data flow block - good for re-use

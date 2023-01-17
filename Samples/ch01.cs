@@ -204,7 +204,7 @@ class ch01_11
       var multiplyBlock = new TransformBlock<int, int>(item =>
       {
         if (item == 1)
-          throw new InvalidOperationException("Blech.");
+          throw new InvalidOperationException("Blah.");
         return item * 2;
       });
       var subtractBlock = new TransformBlock<int, int>(item => item - 2);

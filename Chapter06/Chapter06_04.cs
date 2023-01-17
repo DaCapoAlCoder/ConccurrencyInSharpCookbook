@@ -32,7 +32,7 @@ namespace Chapter06
                         handler => MouseMove -= handler)
                     .Select(x => x.EventArgs.GetPosition(this))
                     // Won't emit until an event stream has started and then stopped for 1 second
-                    // Good for auto-complete type situtations, where the user must stop typing before 
+                    // Good for auto-complete type situations, where the user must stop typing before 
                     // making a call
                     .Throttle(TimeSpan.FromSeconds(1))
                     .Take(3)
@@ -50,7 +50,7 @@ namespace Chapter06
                     // Sample just waits for the timespan after the stream values arrives,
                     // samples the value and emits it. This means it does not wait for input
                     // to stop. It just sends whatever data element is passing through at the
-                    // given time intervl
+                    // given time interval
                     .Sample(TimeSpan.FromSeconds(1))
                     .Take(3)
                     .Subscribe(x => Trace.WriteLine(

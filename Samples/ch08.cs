@@ -19,7 +19,7 @@ static class ch08r01
   {
     var tcs = new TaskCompletionSource<string>();
 
-    // The event handler will complete the task and unregister itself.
+    // The event handler will complete the task and deregister itself.
     DownloadStringCompletedEventHandler handler = null;
     handler = (_, e) =>
     {

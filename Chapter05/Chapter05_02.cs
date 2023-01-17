@@ -87,7 +87,7 @@ namespace Chapter05
             {
                 // Each block can wrap an error in an aggregate
                 // even if it is already wrapped in an aggregate.
-                // So the Flatten() method can be useful to sort that ou
+                // So the Flatten() method can be useful to sort that out
                 Console.WriteLine(ex.Flatten().Message);
             }
         }

@@ -28,8 +28,8 @@ namespace Chapter02
 
         async Task CallMyMethodAsync()
         {
-            // Progress<T> uses the current synchronization context if there is one available. This allows updates to be sent to a ui thread.
-            // The syncrhonization context of the ui will keep updates synrchronized. The synchronization context can keep the execution of
+            // Progress<T> uses the current synchronization context if there is one available. This allows updates to be sent to a UI thread.
+            // The synchronization context of the UI will keep updates synchronized. The synchronization context can keep the execution of
             // the progress updates serialized. The synchronization context allows the continuation after an asynchronous method to return
             // to the same thread.
             // But if there is no current synchronization context a thread from the thread pool is used. 

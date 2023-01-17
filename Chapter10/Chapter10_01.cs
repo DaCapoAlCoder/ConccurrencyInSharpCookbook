@@ -47,11 +47,10 @@ namespace Chapter10
                 Console.WriteLine("The operation experienced a non-cancellation error");
             }
 
-            // Once cancellation can only be issued once. To re-issue cancellation a new token
-            // is required. In other words a cancellation token cannot be un-cancelled.
-
-
+            // Cancellation can only be issued once, to call a method again a new token
+            // is required. In other words a cancellation token cannot be unset
         }
+
         public async Task<int> CancelableMethodAsync(Outcome outcome, CancellationToken cancellationToken)
         {
             if(outcome == Outcome.Success)

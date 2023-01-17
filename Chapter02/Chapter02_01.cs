@@ -19,7 +19,7 @@ namespace Chapter02
             //It still runs to completion
 
             // Its better to pass a cancellation token directly to the task doing work. The approach here is fine
-            // however, if the task doing the work is not cancellable
+            // however, if the task doing the work cannot not be cancelled
             Console.ReadKey();
             Console.WriteLine(value is null ? "null" : value);
         }

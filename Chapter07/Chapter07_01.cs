@@ -29,7 +29,7 @@ namespace Chapter07
         }
 
         [TestMethod]
-        // Uses NitoAsync.Ex nuget package to provide an async context to run
+        // Uses NitoAsync.Ex NuGet package to provide an async context to run
         // async code within a synchronous method. Better than GetAwaiter.GetResult
         public void MyMethodAsync_ReturnsFalseSynchronous()
         {
@@ -66,7 +66,7 @@ namespace Chapter07
         {
             public async Task<int> SomethingAsync()
             {
-                await Task.Yield(); // force asynchronous behavior
+                await Task.Yield(); // force asynchronous behaviour
                 return 13;
             }
         }

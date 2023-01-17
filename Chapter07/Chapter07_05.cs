@@ -52,7 +52,7 @@ namespace Chapter07
             var my = new MyTimeoutClass(stub);
 
             var result = await my.GetStringWithTimeout("http://www.example.com/")
-                // Single exepcts to return a single element from an observable and will throw if there is more than one
+                // Single expects to return a single element from an observable and will throw if there is more than one
                 .SingleAsync();
 
             Assert.AreEqual("stub", result);
@@ -73,7 +73,7 @@ namespace Chapter07
             var stub = new FailureHttpServiceStub();
             var my = new MyTimeoutClass(stub);
 
-            // This would be better accomplashed with Assert.ThrowsExceptionAsync
+            // This would be better accomplished with Assert.ThrowsExceptionAsync
             await Chapter07_02.ThrowsAsync<HttpRequestException>(async () =>
             {
                 await my.GetStringWithTimeout("http://www.example.com/")

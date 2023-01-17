@@ -33,7 +33,7 @@ namespace Chapter05
             var multiplyBlockB = new TransformBlock<int, int>(item =>  item * 4);
 
 
-            // Link the blocks and propegate completion from the source
+            // Link the blocks and propagate completion from the source
             sourceBlock.LinkTo(targetBlockA, new DataflowLinkOptions { PropagateCompletion = true }); ;
             sourceBlock.LinkTo(targetBlockB, new DataflowLinkOptions { PropagateCompletion = true });
             
@@ -46,7 +46,7 @@ namespace Chapter05
             }
 
             // Mark the head of the pipeline as complete
-            // The Completion will propegate
+            // The Completion will propagate
             sourceBlock.Complete();
             await sourceBlock.Completion;
 
@@ -54,7 +54,7 @@ namespace Chapter05
             bool bAvailable = true;
             while(aAvailable || bAvailable)
             {
-                //These will await indfinitely unless the completion has propegated
+                //These will await indefinitely unless the completion has propagated
                 // through the pipeline
                 aAvailable = await multiplyBlockA.OutputAvailableAsync();
                 bAvailable = await multiplyBlockB.OutputAvailableAsync();

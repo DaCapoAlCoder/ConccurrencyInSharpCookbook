@@ -32,11 +32,11 @@ namespace Chapter08
         {
             var tcs = new TaskCompletionSource<string>();
 
-            // The event handler will complete the task and unregister itself.
+            // The event handler will complete the task and deregister itself.
             DownloadStringCompletedEventHandler handler = null;
             handler = (_, e) =>
             {
-                // unregister the handler as soon as the download event fires
+                // deregister the handler as soon as the download event fires
                 // In production this would need error handling to do something
                 // similar
                 client.DownloadStringCompleted -= handler;

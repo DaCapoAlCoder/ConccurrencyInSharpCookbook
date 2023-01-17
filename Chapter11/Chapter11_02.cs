@@ -42,9 +42,9 @@ namespace Chapter11
             // is being used. As apparently no dependency injection tool works with async
             // code (I have my doubts about this)
             // From the .Net Docs:
-            // Add{LIFETIME}<{ SERVICE}> (sp => new { IMPLEMENTATION })
+            // Add{LIFETIME}<{ SERVICE}> (serviceProvider => new { IMPLEMENTATION })
             // Examples:
-            // services.AddSingleton<IMyDep>(sp => new MyDep());
+            // services.AddSingleton<IMyDep>(serviceProvider => new MyDep());
             // Could probably run the async initialisation method after first construction retrain
             // async initialisation and return the initialised object. Could also just inject the
             // factory where an instance is required. A better option might be to use the lazy

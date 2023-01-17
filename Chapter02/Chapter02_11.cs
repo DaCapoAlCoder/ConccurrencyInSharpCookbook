@@ -72,8 +72,7 @@ namespace Chapter02
 
                 // Other properties of ValueTask do not act the same as Task. Unlike Task, Calling Result 
                 // does not block the current thread. Most scenarios will only require the use cases covered
-                // here. Its important to look up the documentation when using ValueTask in other use caset stat
-                // s
+                // here. Its important to look up the documentation when using ValueTask in other use cases 
             }
         }
     }

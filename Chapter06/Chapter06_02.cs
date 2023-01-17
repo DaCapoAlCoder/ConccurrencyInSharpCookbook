@@ -62,14 +62,14 @@ namespace Chapter06
                     .ObserveOn(Scheduler.Default)
                     .Select(position =>
                     {
-                        // These operations now happening in any thread thread from the thread pool
+                        // These operations now happening in any thread from the thread pool
                         // Complex calculation
                         Thread.Sleep(100);
                         var result = position.X + position.Y;
                         Trace.WriteLine($"Calculated result {result} on thread {Environment.CurrentManagedThreadId}");
                         return result;
                     })
-                    // The second observe on switches the result of the above operations back to the ui thread
+                    // The second observe on switches the result of the above operations back to the UI thread
                     // synchronization might get tricky here
                     .ObserveOn(uiContext)
                     .Subscribe(x => Trace.WriteLine($"Result {x} on thread {Environment.CurrentManagedThreadId}"));
